@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="cardApp">
+<head>
+    <title>Card Play</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-sanitize.min.js"></script>
+    <script src="Scripts/ShuffleCard.js"></script>
+    <link href="Stylesheet/cards.css" rel="stylesheet" />
+    <link href="Stylesheet/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body ng-controller="cardController">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">Card Deck</div>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-form navbar-left">
+                    <button class="btn btn-default" data-ng-click="shuffleCard()">Shuffle It</button>
+                </div>
+                <div class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <span>Enter the number of cards to draw</span>
+                        <input id='txtNumCards' class='form-control small' ng-model='txtNumCards' type='text' />
+                    </div>
+                    <button class="btn btn-default" data-ng-click='btnNumCards()'>Draw</button>
+                </div>
+                <div class="navbar-form navbar-left">
+                    <button class="btn btn-default" data-ng-click="drawCardsBySuit()">Sort</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="col-lg-12">
+        <shuffled-cards></shuffled-cards>
+    </div>
+</body>
+</html>

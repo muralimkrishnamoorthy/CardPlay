@@ -1,0 +1,19 @@
+﻿<div class='col-lg-5'>
+    
+    <h3>All Cards</h3>
+    <div ng-repeat='item in shuffledAll' ng-if='$index % 4 == 0' class='row'>
+        <div class='col-xs-3' ng-bind-html='item' ng-repeat='item in shuffledAll.slice($index, ($index+4 > shuffledAll.length ? shuffledAll.length : $index+4))'>
+            {{item}}
+        </div>
+    </div>
+</div><div class='col-lg-1'>
+</div>
+<div class='col-lg-5'>
+    
+    <h3>Drawn Cards</h3>
+    <div ng-repeat='item in shuffled' ng-if='$index % 4 == 0' class='row'>
+        <div class='col-xs-3' ng-bind-html='item' ng-repeat='item in shuffled.slice($index, ($index+4 > shuffled.length ? shuffled.length : $index+4))'>
+            {{item}}
+        </div>
+    </div>
+</div>
